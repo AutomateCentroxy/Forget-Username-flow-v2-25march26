@@ -1,0 +1,28 @@
+Flow org.gluu.agama.forgetusername.main
+     Basepath ""
+// Create  variable for UCreate  variable for UI feedbackI feedback
+uiFeedback = {}
+// forgetusernameService
+forgetusernameService = Call org.gluu.agama.usernameclass.UsernameResendclass#getInstance 
+// userInput
+userInput = RRF "InputEmail.ftlh" uiFeedback
+email = userInput.mail
+Log "@info User mail ++++++++++++++++++++++" email
+userData = Call forgetusernameService getUserEntityByMail email
+// "users details+++++++"
+Log "@info users details+++++++" userData
+When userData is not null
+     username = userData.uid
+     lang = userData.lang
+     Log "@info users details++++++++++++" username lang
+     sendMailed = Call forgetusernameService sendUsernameEmail email username lang
+     Log "@info Email send to user++++"
+     RRF "acknowledgementEmail.ftlh" uiFeedback
+     Finish username
+Otherwise
+     // Assigns the error message for logs or display later
+     uiFeedback.errorMessage = "Invalid email address. User does not exist."
+     // Logs the invalid email entered
+     Log "@error Invalid email entered: " email
+     // End the Flow
+     Finish uiFeedback.errorMessage
