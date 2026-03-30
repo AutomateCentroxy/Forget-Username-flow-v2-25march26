@@ -1012,7 +1012,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-e4eeb186-07a5-4eb0-b4e8-eb31b29a840a",
@@ -1066,7 +1066,7 @@
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "uiFeedback.errorMessage",
 					"hasComment": true,
 					"comment": "",
 					"flowfilename": "",
@@ -1079,7 +1079,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "logNode-20e205e0-3635-4dd2-a205-42d6eef91b44",
