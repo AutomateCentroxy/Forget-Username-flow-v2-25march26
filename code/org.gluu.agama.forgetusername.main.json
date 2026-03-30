@@ -1120,7 +1120,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-d6fec928-5640-41aa-bc5e-c44d66fa8a15",
@@ -1232,8 +1232,8 @@
 			"id": "rrfNode-cf205d5c-b394-4d4c-bd3f-baa09d965301",
 			"type": "rrfNode",
 			"position": {
-				"x": 5082,
-				"y": 1298
+				"x": 5032.551560209041,
+				"y": 1300.1977084351538
 			},
 			"data": {
 				"id": "rrfNode-cf205d5c-b394-4d4c-bd3f-baa09d965301",
@@ -1248,21 +1248,22 @@
 					"assignments": [],
 					"nodeIcon": "ph:globe-simple",
 					"templatePath": "VerifyOtp.ftlh",
-					"asssignedVariableName": "otpInput",
+					"asssignedVariableName": "otpCreds",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "RRF",
 					"hasComment": true,
 					"comment": " Show UI to collect OTP code from user.",
-					"arguments": "uiFeedback"
+					"arguments": "otpUiFeedback"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true,
+			"dragging": false
 		},
 		{
 			"id": "assignmentNode-fd1b37c9-9769-4153-8535-0c8e2c5ec4ab",
@@ -2229,8 +2230,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3796.747817636454,
-		"y": -588.1123142864635,
+		"x": -4000.747817636454,
+		"y": -661.1123142864635,
 		"zoom": 0.9100388240808991
 	}
 }
