@@ -12,6 +12,7 @@ userData = Call forgetusernameService getUserEntityByMail email
 // "users details+++++++"
 Log "@info users details+++++++" userData
 When userData is not null
+     isActive = userData.active
      Log "@ " __________
      When 
           When 
