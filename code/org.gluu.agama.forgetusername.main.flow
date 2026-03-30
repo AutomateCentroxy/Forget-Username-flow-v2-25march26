@@ -17,6 +17,7 @@ When userData is not null
      Log "@info users status ++++++++++++" isActive
      // Active status
      When isActive is "true"
+          Log "@ " __________
           When 
           Otherwise
                username = userData.uid
@@ -26,6 +27,9 @@ When userData is not null
                Log "@info Email send to user++++"
                RRF "acknowledgementEmail.ftlh" uiFeedback
                Finish username
+     Otherwise
+          Log "@ " __________
+          Finish __________
 Otherwise
      // Assigns the error message for logs or display later
      uiFeedback.errorMessage = "Invalid email address. User does not exist."
