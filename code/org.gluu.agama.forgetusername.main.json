@@ -723,7 +723,7 @@
 				},
 				"previousNodeId": "assignmentNode-58131c5d-fd4f-4965-b26c-fd68d1cb66aa",
 				"agamaData": {
-					"logMessage": "users status ++++++++++++\" isActive",
+					"logMessage": "\"users status ++++++++++++\" isActive",
 					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
@@ -731,7 +731,7 @@
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "\"users status ++++++++++++\" isActive"
 				}
 			},
 			"measured": {
@@ -1363,8 +1363,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1452.206951170593,
-		"y": 119.32213621213043,
+		"x": -1475.2069511705931,
+		"y": 91.32213621213043,
 		"zoom": 0.7834971869493407
 	}
 }
