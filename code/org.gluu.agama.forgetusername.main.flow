@@ -30,6 +30,8 @@ When userData is not null
                When otpSent is not null
                     // maxOtpsent
                     maxOtpsent = Repeat 3 times max
+                         //  Show UI to collect OTP code from user.
+                         otpCreds = RRF "VerifyOtp.ftlh" uiFeedback
                Otherwise
                     // "Failed to send OTP to your phone. Please try again."
                     uiFeedback.errorMessage = "Failed to send OTP to your phone. Please try again."
