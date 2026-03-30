@@ -28,6 +28,10 @@ When userData is not null
                // OTP sent result: ++++++++
                Log "@info OTP sent result: ++++++++" smsOtpSend
                When smsOtpSend is not null
+                    otpUiFeedback = {}
+                    otpUiFeedback.errorMessage = ""
+                    resendCount = 0
+                    validationAttempts = 0
                     // maxOtpsent
                     maxOtpsent = Repeat 3 times max
                          //  Show UI to collect OTP code from user.
