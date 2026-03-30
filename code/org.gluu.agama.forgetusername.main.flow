@@ -23,7 +23,6 @@ When userData is not null
           Log "@info username lang phone:++++++++++++++++ " username lang phone
           // Phone number check
           When phone is not null
-               Log "@ " __________
           Otherwise
                // No phone on account, sending email directly
                Log "@info No phone on account, sending email directly ++++++++++++" username lang
