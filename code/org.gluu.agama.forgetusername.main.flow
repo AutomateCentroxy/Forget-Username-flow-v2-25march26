@@ -21,7 +21,9 @@ When userData is not null
           lang = userData.lang
           phone = userData.phone
           Log "@info username lang phone:++++++++++++++++ " username lang phone
-          When 
+          // Phone number check
+          When phone is not null
+               Log "@ " __________
           Otherwise
                username = userData.uid
                lang = userData.lang
@@ -31,8 +33,9 @@ When userData is not null
                RRF "acknowledgementEmail.ftlh" uiFeedback
                Finish username
      Otherwise
-          Log "@ " __________
-          Finish __________
+          uiFeedback.errorMessage = "Your account is not active. Please contact support."
+          Log "@error  Inactive account for email: " email
+          Finish uiFeedback.errorMessage
 Otherwise
      // Assigns the error message for logs or display later
      uiFeedback.errorMessage = "Invalid email address. User does not exist."
