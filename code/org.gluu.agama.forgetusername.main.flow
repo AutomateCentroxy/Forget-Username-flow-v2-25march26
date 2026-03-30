@@ -28,6 +28,7 @@ When userData is not null
                // OTP sent result: ++++++++
                Log "@info OTP sent result: ++++++++" otpSent
                When otpSent is not null
+                    // maxOtpsent
                     maxOtpsent = Repeat 3 times max
                Otherwise
                     // "Failed to send OTP to your phone. Please try again."
