@@ -33,7 +33,7 @@ When userData is not null
                     resendCount = 0
                     validationAttempts = 0
                     // maxOtpsent
-                    maxOtpsent = Repeat 3 times max
+                    maxOtpsent = Repeat 10 times max
                          //  Show UI to collect OTP code from user.
                          otpInput = RRF "VerifyOtp.ftlh" uiFeedback
                          Log "@ " __________
