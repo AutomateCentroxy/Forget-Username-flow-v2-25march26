@@ -25,7 +25,8 @@ When userData is not null
           When phone is not null
                Log "@ " __________
           Otherwise
-               Log "@info users details++++++++++++" username lang
+               // No phone on account, sending email directly
+               Log "@info No phone on account, sending email directly ++++++++++++" username lang
                sendMailed = Call forgetusernameService sendUsernameEmail email username lang
                Log "@info Email send to user++++"
                RRF "acknowledgementEmail.ftlh" uiFeedback
