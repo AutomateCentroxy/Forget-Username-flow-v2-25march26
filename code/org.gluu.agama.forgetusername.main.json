@@ -1045,7 +1045,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "whenNode-8e12c46c-2d40-46a0-81ed-0c5b7d7accb4",
@@ -1068,7 +1068,7 @@
 					"conditionInputField": "",
 					"conditions": [
 						{
-							"variable": "otpSent",
+							"variable": "smsOtpSend",
 							"operator": "is not",
 							"dataValue": "null",
 							"combinator": "none"
@@ -1087,7 +1087,7 @@
 				"width": 109,
 				"height": 58
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "repeatNode-21903255-4129-43c2-be59-754fa41e4346",
@@ -2156,8 +2156,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3085.747817636454,
-		"y": -332.11231428646363,
+		"x": -3677.747817636454,
+		"y": -417.11231428646363,
 		"zoom": 0.9100388240808991
 	}
 }
