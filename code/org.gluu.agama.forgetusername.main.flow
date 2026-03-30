@@ -15,7 +15,8 @@ When userData is not null
      isActive = userData.active
      // "users status ++++++++++++" isActive
      Log "@info users status ++++++++++++" isActive
-     When 
+     // Active status
+     When isActive is "true"
           When 
           Otherwise
                username = userData.uid
