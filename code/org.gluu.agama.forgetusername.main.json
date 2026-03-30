@@ -1121,7 +1121,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-d6fec928-5640-41aa-bc5e-c44d66fa8a15",
@@ -1228,6 +1228,42 @@
 				"height": 122
 			},
 			"selected": false
+		},
+		{
+			"id": "rrfNode-cf205d5c-b394-4d4c-bd3f-baa09d965301",
+			"type": "rrfNode",
+			"position": {
+				"x": 4832,
+				"y": 1298
+			},
+			"data": {
+				"id": "rrfNode-cf205d5c-b394-4d4c-bd3f-baa09d965301",
+				"type": "rrfNode",
+				"position": {
+					"x": 4832,
+					"y": 1298
+				},
+				"previousNodeId": "repeatNode-21903255-4129-43c2-be59-754fa41e4346",
+				"branching": "repeat",
+				"agamaData": {
+					"assignments": [],
+					"nodeIcon": "ph:globe-simple",
+					"templatePath": "VerifyOtp.ftlh",
+					"asssignedVariableName": "otpCreds",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "RRF",
+					"hasComment": true,
+					"comment": " Show UI to collect OTP code from user.",
+					"arguments": "uiFeedback"
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			},
+			"selected": true
 		}
 	],
 	"edges": [
@@ -1836,11 +1872,30 @@
 			},
 			"labelShowBg": true,
 			"sourceHandle": "source_logNode-335f9e23-756b-4f2a-94a1-e0f8b3b64e73"
+		},
+		{
+			"id": "repeatNode-21903255-4129-43c2-be59-754fa41e4346-rrfNode-cf205d5c-b394-4d4c-bd3f-baa09d965301",
+			"type": "default",
+			"source": "repeatNode-21903255-4129-43c2-be59-754fa41e4346",
+			"target": "rrfNode-cf205d5c-b394-4d4c-bd3f-baa09d965301",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "repeat",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_repeatNode-21903255-4129-43c2-be59-754fa41e4346_repeat"
 		}
 	],
 	"viewport": {
-		"x": -4619.263093769998,
-		"y": -740.49321804261,
-		"zoom": 1.0570180405613803
+		"x": -3254.3842125434294,
+		"y": -466.26527389515127,
+		"zoom": 0.7834971869493407
 	}
 }
