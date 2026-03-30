@@ -20,7 +20,7 @@ When userData is not null
           username = userData.uid
           lang = userData.lang
           phone = userData.phone
-          Log "@ " __________
+          Log "@info username lang phone:++++++++++++++++ " username lang phone
           When 
           Otherwise
                username = userData.uid
