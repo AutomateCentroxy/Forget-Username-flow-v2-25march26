@@ -309,92 +309,128 @@ public class JansForgetUsername extends UsernameResendclass {
 
     private boolean sendTwilioSms(String phone, String message) {
         try {
+            // Determine which FROM_NUMBER to use based on country code
             String fromNumber = getFromNumberForPhone(phone);
+            
             if (fromNumber == null || fromNumber.trim().isEmpty()) {
-                logger.error("FROM_NUMBER not configured for phone {}", phone);
+                logger.error("FROM_NUMBER is null or empty, cannot send OTP to {}", phone);
                 return false;
             }
 
-            logger.info("Twilio: from={} to={}", fromNumber, phone);
+            PhoneNumber FROM_NUMBER = new com.twilio.type.PhoneNumber(fromNumber);
+
+            logger.info("Sending from: {}", fromNumber);
+
+            PhoneNumber TO_NUMBER = new com.twilio.type.PhoneNumber(phone);
+
+            logger.info("Sending to: {}", phone);
+
             Twilio.init(flowConfig.get("ACCOUNT_SID"), flowConfig.get("AUTH_TOKEN"));
-            Message.creator(
-                    new PhoneNumber(phone),
-                    new PhoneNumber(fromNumber),
-                    message
-            ).create();
 
-            logger.info("SMS delivered to {}", phone);
+            Message.creator(TO_NUMBER, FROM_NUMBER, message).create();
+
+            logger.info("OTP code has been successfully sent to {}", phone);
+
             return true;
-
-        } catch (Exception e) {
-            logger.error("Twilio error for {}: {}", phone, e.getMessage(), e);
+        } catch (Exception exception) {
+            logger.error("Error sending OTP code to {}: {}", phone, exception.getMessage(), exception);
             return false;
         }
     }
 
     private String getFromNumberForPhone(String phone) {
         try {
-            String defaultFrom   = flowConfig.get("FROM_NUMBER");
-            String usCodesStr    = flowConfig.get("US_COUNTRY_CODES");
-            String restrictedStr = flowConfig.get("RESTRICTED_COUNTRY_CODES");
-
-            if (defaultFrom == null || defaultFrom.trim().isEmpty()) {
+            String defaultFromNumber = flowConfig.get("FROM_NUMBER");
+            String usCountryCodes = flowConfig.get("US_COUNTRY_CODES");
+            String restrictedCodes = flowConfig.get("RESTRICTED_COUNTRY_CODES");
+            
+            if (defaultFromNumber == null || defaultFromNumber.trim().isEmpty()) {
                 logger.error("FROM_NUMBER not configured");
                 return null;
             }
-
-            Set<String> usSet = parseCodeSet(usCodesStr);
-            Set<String> restrictedSet = parseCodeSet(restrictedStr);
-
-            Set<String> allCodes = new HashSet<>();
-            allCodes.addAll(usSet);
-            allCodes.addAll(restrictedSet);
-
-            String countryCode = extractCountryCode(phone, allCodes);
-
-            if (usSet.contains(countryCode)) {
-                String usFrom = flowConfig.get("FROM_NUMBER_US");
-                if (usFrom != null && !usFrom.trim().isEmpty()) return usFrom;
+            
+            // Parse US country codes for matching
+            Set<String> usCountrySet = new HashSet<>();
+            if (usCountryCodes != null && !usCountryCodes.trim().isEmpty()) {
+                usCountrySet = Arrays.stream(usCountryCodes.split(","))
+                        .map(String::trim)
+                        .filter(s -> !s.isEmpty())
+                        .collect(Collectors.toSet());
+            }
+            
+            // Parse restricted country codes for matching
+            Set<String> restrictedSet = new HashSet<>();
+            if (restrictedCodes != null && !restrictedCodes.trim().isEmpty()) {
+                restrictedSet = Arrays.stream(restrictedCodes.split(","))
+                        .map(String::trim)
+                        .filter(s -> !s.isEmpty())
+                        .collect(Collectors.toSet());
+            }
+            
+            // Combine both sets for accurate country code extraction
+            Set<String> allKnownCodes = new HashSet<>();
+            allKnownCodes.addAll(usCountrySet);
+            allKnownCodes.addAll(restrictedSet);
+            
+            // Extract country code from phone number
+            String countryCode = extractCountryCode(phone, allKnownCodes);
+            
+            if (countryCode == null || countryCode.isEmpty()) {
+                return defaultFromNumber;
             }
 
+            // Priority 1: Check if country code is in US_COUNTRY_CODES - use US-specific sender
+            if (usCountrySet.contains(countryCode)) {
+                String usFromNumber = flowConfig.get("FROM_NUMBER_US");
+                
+                if (usFromNumber != null && !usFromNumber.trim().isEmpty()) {
+                    logger.info("Using US-specific sender {} for country code {}", usFromNumber, countryCode);
+                    return usFromNumber;
+                }
+            }
+
+            // Priority 2: Check if country code is in restricted list
             if (restrictedSet.contains(countryCode)) {
-                String rFrom = flowConfig.get("FROM_NUMBER_RESTRICTED_COUNTRIES");
-                if (rFrom != null && !rFrom.trim().isEmpty()) return rFrom;
+                String restrictedFromNumber = flowConfig.get("FROM_NUMBER_RESTRICTED_COUNTRIES");
+                
+                if (restrictedFromNumber != null && !restrictedFromNumber.trim().isEmpty()) {
+                    logger.info("Using restricted sender {} for country code {}", restrictedFromNumber, countryCode);
+                    return restrictedFromNumber;
+                }
             }
 
-            return defaultFrom;
-
+            return defaultFromNumber;
         } catch (Exception ex) {
-            logger.error("getFromNumberForPhone error: {}", ex.getMessage(), ex);
+            logger.error("Error in getFromNumberForPhone: {}", ex.getMessage(), ex);
             return flowConfig.get("FROM_NUMBER");
         }
     }
 
-    private Set<String> parseCodeSet(String csv) {
-        if (csv == null || csv.trim().isEmpty()) return new HashSet<>();
-        return Arrays.stream(csv.split(","))
-                .map(String::trim)
-                .filter(s -> !s.isEmpty())
-                .collect(Collectors.toSet());
-    }
-
     private String extractCountryCode(String phone, Set<String> knownCodes) {
-        if (phone == null || phone.trim().isEmpty()) return null;
-        String cleaned = phone.startsWith("+") ? phone.substring(1) : phone;
-        if (cleaned.length() < 2) return null;
-
-        // US/Canada (+1)
-        if (cleaned.startsWith("1") && cleaned.length() > 1
-                && Character.isDigit(cleaned.charAt(1))) return "1";
-
-        // 3-digit codes
-        if (cleaned.length() >= 3 && knownCodes != null && !knownCodes.isEmpty()) {
-            String three = cleaned.substring(0, 3);
-            if (knownCodes.contains(three)) return three;
+        if (phone == null || phone.trim().isEmpty()) {
+            return null;
         }
 
-        // Default 2-digit
+        String cleaned = phone.startsWith("+") ? phone.substring(1) : phone;
+        
+        if (cleaned.length() < 2) {
+            return null;
+        }
+
+        // Handle code "1" first (US/Canada and territories)
+        if (cleaned.startsWith("1") && cleaned.length() > 1 && Character.isDigit(cleaned.charAt(1))) {
+            return "1";
+        }
+        
+        // Try 3-digit codes ONLY if they're in our knownCodes list
+        if (cleaned.length() >= 3 && knownCodes != null && !knownCodes.isEmpty()) {
+            String threeDigit = cleaned.substring(0, 3);
+            if (knownCodes.contains(threeDigit)) {
+                return threeDigit;
+            }
+        }
+        
+        // Default: Extract 2-digit country code
         return cleaned.substring(0, 2);
     }
 }
-
