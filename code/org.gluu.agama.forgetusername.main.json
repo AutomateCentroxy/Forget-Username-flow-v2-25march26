@@ -1045,7 +1045,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "whenNode-8e12c46c-2d40-46a0-81ed-0c5b7d7accb4",
@@ -1066,7 +1066,14 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "otpSent",
+							"operator": "is not",
+							"dataValue": "null",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
@@ -1079,7 +1086,42 @@
 			"measured": {
 				"width": 109,
 				"height": 58
-			}
+			},
+			"selected": false
+		},
+		{
+			"id": "repeatNode-21903255-4129-43c2-be59-754fa41e4346",
+			"type": "repeatNode",
+			"position": {
+				"x": 4582,
+				"y": 1048
+			},
+			"data": {
+				"id": "repeatNode-21903255-4129-43c2-be59-754fa41e4346",
+				"type": "repeatNode",
+				"position": {
+					"x": 4582,
+					"y": 1048
+				},
+				"previousNodeId": "whenNode-8e12c46c-2d40-46a0-81ed-0c5b7d7accb4",
+				"branching": "success",
+				"agamaData": {
+					"nodeIcon": "material-symbols:event-repeat-outline-rounded",
+					"maxIteration": "3",
+					"maxIterationVariableName": "maxOtpsent",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": ""
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			},
+			"selected": true
 		}
 	],
 	"edges": [
@@ -1612,11 +1654,30 @@
 			},
 			"labelShowBg": true,
 			"sourceHandle": "source_logNode-adcf7372-46fc-402c-84f1-e9d21a0ee7e1"
+		},
+		{
+			"id": "whenNode-8e12c46c-2d40-46a0-81ed-0c5b7d7accb4-repeatNode-21903255-4129-43c2-be59-754fa41e4346",
+			"type": "default",
+			"source": "whenNode-8e12c46c-2d40-46a0-81ed-0c5b7d7accb4",
+			"target": "repeatNode-21903255-4129-43c2-be59-754fa41e4346",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "Condition met",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_whenNode-8e12c46c-2d40-46a0-81ed-0c5b7d7accb4_success"
 		}
 	],
 	"viewport": {
-		"x": -5205.356094520017,
-		"y": -690.3328805136471,
-		"zoom": 1.4260257173641406
+		"x": -5271.131864985951,
+		"y": -1024.8077963309095,
+		"zoom": 1.2277356839150602
 	}
 }
