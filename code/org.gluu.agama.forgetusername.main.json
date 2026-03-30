@@ -330,7 +330,7 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 59
+				"height": 58
 			},
 			"selected": false
 		},
@@ -350,15 +350,15 @@
 				},
 				"previousNodeId": "whenNode-0eb341a8-d695-461b-81d6-268c70a5b92f",
 				"agamaData": {
-					"logMessage": "\"users details++++++++++++\" username lang",
+					"logMessage": "\"No phone on account, sending email directly ++++++++++++\" username lang",
 					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "No phone",
 					"hasComment": true,
-					"comment": ""
+					"comment": "No phone on account, sending email directly"
 				},
 				"branching": "otherwise"
 			},
@@ -366,7 +366,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -735,7 +735,7 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 59
+				"height": 58
 			},
 			"selected": false
 		},
@@ -826,7 +826,7 @@
 			},
 			"measured": {
 				"width": 109,
-				"height": 59
+				"height": 58
 			},
 			"selected": false
 		},
@@ -1031,8 +1031,8 @@
 				}
 			},
 			"measured": {
-				"width": 168,
-				"height": 120
+				"width": 170,
+				"height": 122
 			}
 		}
 	],
@@ -1550,8 +1550,8 @@
 		}
 	],
 	"viewport": {
-		"x": -2906.1296243936904,
-		"y": 4.318710421943024,
-		"zoom": 0.860949188338904
+		"x": -3915.6517980403023,
+		"y": -211.8212531054137,
+		"zoom": 1.161508731925722
 	}
 }
