@@ -27,7 +27,7 @@ When userData is not null
                smsOtpSend = Call forgetusernameService sendOtpToPhone phone lang
                // OTP sent result: ++++++++
                Log "@info OTP sent result: ++++++++" smsOtpSend
-               When otpSent is not null
+               When smsOtpSend is not null
                     // maxOtpsent
                     maxOtpsent = Repeat 3 times max
                          //  Show UI to collect OTP code from user.
