@@ -25,7 +25,8 @@ When userData is not null
           When phone is not null
                // sms otpSent
                otpSent = Call forgetusernameService sendOtpToPhone phone lang
-               Log "@ " __________
+               // OTP sent result: ++++++++
+               Log "@info OTP sent result: ++++++++" otpSent
                When 
           Otherwise
                // No phone on account, sending email directly
