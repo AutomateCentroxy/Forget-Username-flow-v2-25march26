@@ -29,6 +29,13 @@ When userData is not null
                Log "@info OTP sent result: ++++++++" otpSent
                When otpSent is not null
                     maxOtpsent = Repeat 3 times max
+               Otherwise
+                    // "Failed to send OTP to your phone. Please try again."
+                    uiFeedback.errorMessage = "Failed to send OTP to your phone. Please try again."
+                    // OTP sending failed for
+                    Log "@error OTP sending failed for: " phone
+                    // OTP sending failed for: 
+                    Finish uiFeedback.errorMessage
           Otherwise
                // No phone on account, sending email directly
                Log "@info No phone on account, sending email directly ++++++++++++" username lang
