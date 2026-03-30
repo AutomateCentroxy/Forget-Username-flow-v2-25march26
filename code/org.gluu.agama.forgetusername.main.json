@@ -1249,7 +1249,7 @@
 					"assignments": [],
 					"nodeIcon": "ph:globe-simple",
 					"templatePath": "VerifyOtp.ftlh",
-					"asssignedVariableName": "otpCreds",
+					"asssignedVariableName": "otpInput",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
