@@ -970,6 +970,109 @@
 				"height": 122
 			},
 			"selected": false
+		},
+		{
+			"id": "callNode-1bfca502-ac9e-4d97-9ea2-975db61a7672",
+			"type": "callNode",
+			"position": {
+				"x": 3832,
+				"y": 790
+			},
+			"data": {
+				"id": "callNode-1bfca502-ac9e-4d97-9ea2-975db61a7672",
+				"type": "callNode",
+				"position": {
+					"x": 3832,
+					"y": 790
+				},
+				"previousNodeId": "whenNode-0eb341a8-d695-461b-81d6-268c70a5b92f",
+				"branching": "success",
+				"agamaData": {
+					"javaClassName": "",
+					"javaMethodName": "",
+					"javaVariableName": "",
+					"exceptionVariableField": "",
+					"callType": "Call static method",
+					"arguments": [],
+					"nodeIcon": "material-symbols:code",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": ""
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			}
+		},
+		{
+			"id": "logNode-adcf7372-46fc-402c-84f1-e9d21a0ee7e1",
+			"type": "logNode",
+			"position": {
+				"x": 4082,
+				"y": 790
+			},
+			"data": {
+				"id": "logNode-adcf7372-46fc-402c-84f1-e9d21a0ee7e1",
+				"type": "logNode",
+				"position": {
+					"x": 4082,
+					"y": 790
+				},
+				"previousNodeId": "callNode-1bfca502-ac9e-4d97-9ea2-975db61a7672",
+				"agamaData": {
+					"logMessage": "",
+					"logLevel": "",
+					"nodeIcon": "octicon:log-16",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": ""
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			}
+		},
+		{
+			"id": "whenNode-8e12c46c-2d40-46a0-81ed-0c5b7d7accb4",
+			"type": "whenNode",
+			"position": {
+				"x": 4332,
+				"y": 848
+			},
+			"data": {
+				"id": "whenNode-8e12c46c-2d40-46a0-81ed-0c5b7d7accb4",
+				"type": "whenNode",
+				"position": {
+					"x": 4332,
+					"y": 848
+				},
+				"previousNodeId": "logNode-adcf7372-46fc-402c-84f1-e9d21a0ee7e1",
+				"agamaData": {
+					"variableField": "",
+					"valueField": "",
+					"conditionInputField": "",
+					"conditions": [],
+					"nodeIcon": "ph:swap",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": ""
+				}
+			},
+			"measured": {
+				"width": 109,
+				"height": 58
+			}
 		}
 	],
 	"edges": [
@@ -1445,11 +1548,68 @@
 				"fillOpacity": 0.7
 			},
 			"id": "xy-edge__whenNode-0eb341a8-d695-461b-81d6-268c70a5b92fsource_whenNode-0eb341a8-d695-461b-81d6-268c70a5b92f_otherwise-logNode-eac78c5f-7b9a-4f3d-bbe7-50e3f1a04ccftarget_logNode-eac78c5f-7b9a-4f3d-bbe7-50e3f1a04ccf"
+		},
+		{
+			"id": "whenNode-0eb341a8-d695-461b-81d6-268c70a5b92f-callNode-1bfca502-ac9e-4d97-9ea2-975db61a7672",
+			"type": "default",
+			"source": "whenNode-0eb341a8-d695-461b-81d6-268c70a5b92f",
+			"target": "callNode-1bfca502-ac9e-4d97-9ea2-975db61a7672",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "Condition met",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_whenNode-0eb341a8-d695-461b-81d6-268c70a5b92f_success"
+		},
+		{
+			"id": "callNode-1bfca502-ac9e-4d97-9ea2-975db61a7672-logNode-adcf7372-46fc-402c-84f1-e9d21a0ee7e1",
+			"type": "default",
+			"source": "callNode-1bfca502-ac9e-4d97-9ea2-975db61a7672",
+			"target": "logNode-adcf7372-46fc-402c-84f1-e9d21a0ee7e1",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_callNode-1bfca502-ac9e-4d97-9ea2-975db61a7672"
+		},
+		{
+			"id": "logNode-adcf7372-46fc-402c-84f1-e9d21a0ee7e1-whenNode-8e12c46c-2d40-46a0-81ed-0c5b7d7accb4",
+			"type": "default",
+			"source": "logNode-adcf7372-46fc-402c-84f1-e9d21a0ee7e1",
+			"target": "whenNode-8e12c46c-2d40-46a0-81ed-0c5b7d7accb4",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_logNode-adcf7372-46fc-402c-84f1-e9d21a0ee7e1"
 		}
 	],
 	"viewport": {
-		"x": -3349.039174347072,
-		"y": -351.6991249999629,
+		"x": -4034.039174347072,
+		"y": -479.6991249999629,
 		"zoom": 1
 	}
 }
