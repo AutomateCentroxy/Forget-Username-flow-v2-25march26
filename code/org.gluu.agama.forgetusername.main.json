@@ -851,14 +851,21 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "phone",
+							"operator": "is not",
+							"dataValue": "null",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Phone number check"
 				}
 			},
 			"measured": {
@@ -932,7 +939,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-844e88ef-56c9-464c-bd62-44bdc4ddec76",
@@ -985,12 +992,18 @@
 				"previousNodeId": "whenNode-fdef065b-08fc-47c9-8370-10e4f73c2ec3",
 				"branching": "otherwise",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"Your account is not active. Please contact support.\"",
+							"assignedVariableName": "uiFeedback.errorMessage"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Your account is not active. Please contact support.",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -999,7 +1012,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "logNode-e4eeb186-07a5-4eb0-b4e8-eb31b29a840a",
@@ -1017,13 +1030,13 @@
 				},
 				"previousNodeId": "assignmentNode-57af0ef6-b656-4e97-b125-803845f83f94",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\" Inactive account for email: \" email",
+					"logLevel": "error",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "\" Inactive account for email: \" email",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -1031,7 +1044,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "finishNode-38cc68d9-5c6d-4b02-903b-4454b0657ea0",
@@ -1056,8 +1070,42 @@
 					"hasComment": true,
 					"comment": "",
 					"flowfilename": "",
-					"returnVariable": "",
+					"returnVariable": "uiFeedback.errorMessage",
+					"finishMode": "withVariable",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			},
+			"selected": false
+		},
+		{
+			"id": "logNode-20e205e0-3635-4dd2-a205-42d6eef91b44",
+			"type": "logNode",
+			"position": {
+				"x": 4234.043562181119,
+				"y": 827.0135342960397
+			},
+			"data": {
+				"id": "logNode-20e205e0-3635-4dd2-a205-42d6eef91b44",
+				"type": "logNode",
+				"position": {
+					"x": 4234.043562181119,
+					"y": 827.0135342960397
+				},
+				"previousNodeId": "assignmentNode-78e72d21-d391-4f02-bd46-5f5a03d6daa6",
+				"agamaData": {
+					"logMessage": "",
+					"logLevel": "",
+					"nodeIcon": "octicon:log-16",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": ""
 				}
 			},
 			"measured": {
@@ -1596,11 +1644,30 @@
 			},
 			"labelShowBg": true,
 			"sourceHandle": "source_logNode-e4eeb186-07a5-4eb0-b4e8-eb31b29a840a"
+		},
+		{
+			"id": "assignmentNode-78e72d21-d391-4f02-bd46-5f5a03d6daa6-logNode-20e205e0-3635-4dd2-a205-42d6eef91b44",
+			"type": "default",
+			"source": "assignmentNode-78e72d21-d391-4f02-bd46-5f5a03d6daa6",
+			"target": "logNode-20e205e0-3635-4dd2-a205-42d6eef91b44",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_assignmentNode-78e72d21-d391-4f02-bd46-5f5a03d6daa6"
 		}
 	],
 	"viewport": {
-		"x": -3152.9144942830535,
-		"y": -157.6203916114091,
+		"x": -2896.489937389533,
+		"y": 52.072878505477206,
 		"zoom": 1.0570180405613803
 	}
 }
