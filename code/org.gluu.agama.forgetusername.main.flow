@@ -25,8 +25,6 @@ When userData is not null
           When phone is not null
                Log "@ " __________
           Otherwise
-               username = userData.uid
-               lang = userData.lang
                Log "@info users details++++++++++++" username lang
                sendMailed = Call forgetusernameService sendUsernameEmail email username lang
                Log "@info Email send to user++++"
