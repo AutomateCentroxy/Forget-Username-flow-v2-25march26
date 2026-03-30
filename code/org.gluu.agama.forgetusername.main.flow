@@ -35,7 +35,7 @@ When userData is not null
                     // maxOtpsent
                     maxOtpsent = Repeat 10 times max
                          //  Show UI to collect OTP code from user.
-                         otpInput = RRF "VerifyOtp.ftlh" uiFeedback
+                         otpCreds = RRF "VerifyOtp.ftlh" otpUiFeedback
                          Log "@ " __________
                          Call __________#__________ 
                          Log "@ " __________
