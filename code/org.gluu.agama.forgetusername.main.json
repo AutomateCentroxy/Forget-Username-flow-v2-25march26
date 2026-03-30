@@ -795,7 +795,7 @@
 			"type": "whenNode",
 			"position": {
 				"x": 3582,
-				"y": 590
+				"y": 588.9011457824231
 			},
 			"data": {
 				"id": "whenNode-0eb341a8-d695-461b-81d6-268c70a5b92f",
@@ -830,7 +830,8 @@
 				"width": 109,
 				"height": 58
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "logNode-c7dac69f-908f-447d-bc4d-29c2880da75d",
@@ -989,24 +990,29 @@
 				"branching": "success",
 				"agamaData": {
 					"javaClassName": "",
-					"javaMethodName": "",
-					"javaVariableName": "",
+					"javaMethodName": "sendOtpToPhone",
+					"javaVariableName": "forgetusernameService",
 					"exceptionVariableField": "",
-					"callType": "Call static method",
-					"arguments": [],
+					"callType": "Call method on instance",
+					"arguments": [
+						"phone",
+						"lang"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "sms otpSent",
+					"asssignedVariableName": "otpSent"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-adcf7372-46fc-402c-84f1-e9d21a0ee7e1",
@@ -1608,8 +1614,8 @@
 		}
 	],
 	"viewport": {
-		"x": -4034.039174347072,
-		"y": -479.6991249999629,
-		"zoom": 1
+		"x": -5205.356094520017,
+		"y": -690.3328805136471,
+		"zoom": 1.4260257173641406
 	}
 }
