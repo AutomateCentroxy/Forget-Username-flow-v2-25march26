@@ -36,10 +36,6 @@ When userData is not null
                     maxOtpsent = Repeat 10 times max
                          //  Show UI to collect OTP code from user.
                          otpCreds = RRF "VerifyOtp.ftlh" otpUiFeedback
-                         Log "@ " __________
-                         Call __________#__________ 
-                         Log "@ " __________
-                         When 
                Otherwise
                     // "Failed to send OTP to your phone. Please try again."
                     uiFeedback.errorMessage = "Failed to send OTP to your phone. Please try again."
