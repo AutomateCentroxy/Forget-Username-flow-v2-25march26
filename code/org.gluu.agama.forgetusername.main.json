@@ -558,7 +558,7 @@
 				"width": 170,
 				"height": 123
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -684,12 +684,18 @@
 				"previousNodeId": "whenNode-c0bb1ef6-6a5c-4d54-ab0c-620d792efb30",
 				"branching": "success",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "userData.active",
+							"assignedVariableName": "isActive"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "User Status \"Active\" check ",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -698,7 +704,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -1355,8 +1361,8 @@
 		}
 	],
 	"viewport": {
-		"x": -511.9888440896434,
-		"y": 229.24088155132347,
-		"zoom": 0.5
+		"x": -1791.1601727585617,
+		"y": 75.01729311092066,
+		"zoom": 0.9100388240808991
 	}
 }
