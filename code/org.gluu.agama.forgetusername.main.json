@@ -1005,7 +1005,7 @@
 					"displayName": "",
 					"hasComment": true,
 					"comment": "sms otpSent",
-					"asssignedVariableName": "otpSent"
+					"asssignedVariableName": "smsOtpSend"
 				}
 			},
 			"measured": {
@@ -1030,7 +1030,7 @@
 				},
 				"previousNodeId": "callNode-1bfca502-ac9e-4d97-9ea2-975db61a7672",
 				"agamaData": {
-					"logMessage": "\"OTP sent result: ++++++++\" otpSent",
+					"logMessage": "\"OTP sent result: ++++++++\" smsOtpSend",
 					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
@@ -1045,7 +1045,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "whenNode-8e12c46c-2d40-46a0-81ed-0c5b7d7accb4",
@@ -1294,7 +1294,9 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "logNode-1c618318-9fc3-4077-990e-d0fdda5701cc",
@@ -1324,8 +1326,8 @@
 				}
 			},
 			"measured": {
-				"width": 170,
-				"height": 122
+				"width": 168,
+				"height": 120
 			}
 		},
 		{
@@ -2154,8 +2156,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3906.7630622204406,
-		"y": -638.0496175675478,
-		"zoom": 0.7834971869493407
+		"x": -3085.747817636454,
+		"y": -332.11231428646363,
+		"zoom": 0.9100388240808991
 	}
 }
