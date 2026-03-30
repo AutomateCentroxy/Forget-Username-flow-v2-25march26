@@ -1012,7 +1012,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-adcf7372-46fc-402c-84f1-e9d21a0ee7e1",
@@ -1030,21 +1030,22 @@
 				},
 				"previousNodeId": "callNode-1bfca502-ac9e-4d97-9ea2-975db61a7672",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"OTP sent result: ++++++++\" otpSent",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "OTP sent result: ++++++++"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "whenNode-8e12c46c-2d40-46a0-81ed-0c5b7d7accb4",
