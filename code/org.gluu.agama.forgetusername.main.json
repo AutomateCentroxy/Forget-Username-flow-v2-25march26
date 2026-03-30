@@ -800,12 +800,28 @@
 				"previousNodeId": "whenNode-fdef065b-08fc-47c9-8370-10e4f73c2ec3",
 				"branching": "success",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "userData.uid",
+							"assignedVariableName": "username"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "userData.lang",
+							"assignedVariableName": "lang"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "userData.phone",
+							"assignedVariableName": "phone"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Getting User profile",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -813,7 +829,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "whenNode-0eb341a8-d695-461b-81d6-268c70a5b92f",
@@ -847,7 +864,8 @@
 			"measured": {
 				"width": 109,
 				"height": 59
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-78e72d21-d391-4f02-bd46-5f5a03d6daa6",
@@ -1579,8 +1597,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1718.5819511705931,
-		"y": 234.32213621213043,
+		"x": -1924.8629757184872,
+		"y": -6.977277938365432,
 		"zoom": 0.7834971869493407
 	}
 }
