@@ -23,7 +23,8 @@ When userData is not null
           Log "@info username lang phone:++++++++++++++++ " username lang phone
           // Phone number check
           When phone is not null
-               Call __________#__________ 
+               // sms otpSent
+               otpSent = Call forgetusernameService sendOtpToPhone phone lang
                Log "@ " __________
                When 
           Otherwise
