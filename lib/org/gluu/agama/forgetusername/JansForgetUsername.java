@@ -31,7 +31,7 @@ public class JansForgetUsername extends UsernameResendclass {
 
     private static final Logger logger = LoggerFactory.getLogger(JansForgetUsername.class);
 
-    // ── Existing constants (unchanged) ────────────────────────────────────────
+    
     private static final String UID          = "uid";
     private static final String INUM_ATTR    = "inum";
     private static final String LANG         = "lang";
@@ -39,8 +39,6 @@ public class JansForgetUsername extends UsernameResendclass {
     private static final String DISPLAY_NAME = "displayName";
     private static final String GIVEN_NAME   = "givenName";
     private static final String LAST_NAME    = "sn";
-
-    // ── New constants ──────────────────────────────────────────────────────────
     private static final String MOBILE       = "mobile";
     private static final String ACTIVE_VALUE = "active";
     private static final int    OTP_LENGTH   = 6;
