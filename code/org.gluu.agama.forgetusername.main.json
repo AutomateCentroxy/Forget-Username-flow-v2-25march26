@@ -1940,15 +1940,15 @@
 				"previousNodeId": "whenNode-b4390e6c-21ea-4ea0-ae69-b300b085dde2",
 				"branching": "success",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Fail to resend new code to user. \" resendResult",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "\"Fail to resend new code to user. \" resendResult"
 				}
 			},
 			"measured": {
@@ -1973,20 +1973,32 @@
 				},
 				"previousNodeId": "logNode-2271567e-c7a9-4de7-b650-d62a1cf62cef",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"Error occurs while sending new code to you. Please contact site administrator.\"",
+							"assignedVariableName": "otpUiFeedback.errorMessage"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"\"",
+							"assignedVariableName": "otpUiFeedback.infoMessage"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "\"Error occurs while sending new code to you. Please contact site administrator.\""
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "assignmentNode-3bb4e9ac-e58c-442c-a553-22705b4e9f21",
@@ -2024,7 +2036,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		}
 	],
 	"edges": [
@@ -3036,7 +3048,7 @@
 	],
 	"viewport": {
 		"x": -5432.530105911787,
-		"y": -1249.0400032133227,
+		"y": -1250.0400032133227,
 		"zoom": 0.860949188338904
 	}
 }
