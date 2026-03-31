@@ -74,6 +74,15 @@ When userData is not null
                               Log "@info Validation attempt number: " validationAttempts
                               // Check validation
                               When validationAttempts is 4
+                                   Log "@ " __________
+                                   Finish __________
+                              Otherwise
+                                   Call __________#__________ 
+                                   Log "@ " __________
+                                   When 
+                                        Log "@ " __________
+                                   Otherwise
+                                        Log "@ " __________
                Otherwise
                     // "Failed to send OTP to your phone. Please try again."
                     uiFeedback.errorMessage = "Failed to send OTP to your phone. Please try again."
