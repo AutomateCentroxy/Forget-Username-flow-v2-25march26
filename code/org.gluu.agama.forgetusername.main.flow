@@ -52,6 +52,9 @@ When userData is not null
                               Log "@info Resend attempt number: " resendCount
                               // resendResult
                               resendResult = Call forgetusernameService sendOtpToPhone phone lang
+                              When 
+                                   Log "@ " __________
+                              Log "@ " __________
                          Otherwise
                               //  Add log entry with collected code in log file.
                               Log "@info Information provided by the user is : " otpCreds.code
