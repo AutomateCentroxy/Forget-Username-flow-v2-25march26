@@ -2099,21 +2099,22 @@
 				"previousNodeId": "whenNode-ed26a6aa-325d-4363-9ec8-405fa72fa1ba",
 				"branching": "success",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Maximum validation attempts exceeded\"",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Log validation exceeded",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Log validation exceeded"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "assignmentNode-27bde485-ed1a-4c8b-a13d-c79570566650",
@@ -3577,8 +3578,8 @@
 		}
 	],
 	"viewport": {
-		"x": -4822.372183975328,
-		"y": -434.84110677843955,
+		"x": -4143.372183975328,
+		"y": -490.84110677843967,
 		"zoom": 0.7412335049014176
 	}
 }
