@@ -48,8 +48,10 @@ When userData is not null
                                    Finish it_resend
                               // Increment resend counter
                               resendCount = Call org.gluu.agama.forgetusername.CounterHelper#increment resendCount
-                              Log "@ " __________
-                              Call __________#__________ 
+                              // "Resend attempt number: " resendCount
+                              Log "@info Resend attempt number: " resendCount
+                              // resendResult
+                              resendResult = Call forgetusernameService sendOtpToPhone phone lang
                          Otherwise
                               //  Add log entry with collected code in log file.
                               Log "@info Information provided by the user is : " otpCreds.code
