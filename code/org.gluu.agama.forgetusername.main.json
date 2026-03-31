@@ -1379,7 +1379,7 @@
 				"previousNodeId": "whenNode-1d8816a1-c78f-4d2a-ab34-789d8d838774",
 				"branching": "success",
 				"agamaData": {
-					"logMessage": "\"Maximum resend otp attempts exceeded\"",
+					"logMessage": "\"User requested a new OTP code.\"",
 					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
@@ -1387,14 +1387,14 @@
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": "Maximum resend otp attempts exceeded"
+					"comment": "User requested a new OTP code."
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "whenNode-6a2e32cb-09ed-40bf-a468-d1870ce56673",
@@ -1470,7 +1470,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-61c234fe-8625-41d8-b16e-570fbd5cd0e1",
@@ -2297,8 +2297,8 @@
 		}
 	],
 	"viewport": {
-		"x": -5530.650416154463,
-		"y": -1420.7326120983494,
+		"x": -5323.650416154463,
+		"y": -1297.7326120983494,
 		"zoom": 1
 	}
 }
