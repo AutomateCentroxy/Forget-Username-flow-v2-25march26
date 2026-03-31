@@ -1616,7 +1616,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-03e659dc-90ed-43d0-a836-097a157b8e30",
@@ -1634,21 +1634,22 @@
 				},
 				"previousNodeId": "callNode-69c9a6a7-53b8-48a0-b6dc-741993e0196f",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Validation attempt number: \" validationAttempts",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Log validation attempt",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Add log entry withvalidation result in log file."
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "callNode-b1666914-434d-4215-824f-3b4932ca256c",
@@ -2631,8 +2632,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3627.288705691555,
-		"y": -667.038757325357,
+		"x": -3712.288705691555,
+		"y": -693.038757325357,
 		"zoom": 0.7412335049014176
 	}
 }
