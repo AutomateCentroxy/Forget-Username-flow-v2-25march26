@@ -87,7 +87,7 @@ When userData is not null
                                    Log "@info OTP validation result is:" otpValidationResult
                                    // If otp validation was successful
                                    When otpValidationResult is true
-                                        Log "@ " __________
+                                        Log "@info OTP validated Successfully"
                                    Otherwise
                                         // The maximum number of attempt has been reached.
                                         Log "@info Invalid code provided "
