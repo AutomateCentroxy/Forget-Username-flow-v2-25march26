@@ -31,7 +31,7 @@ public class JansForgetUsername extends UsernameResendclass {
 
     private static final Logger logger = LoggerFactory.getLogger(JansForgetUsername.class);
 
-    
+    // ── Existing constants (unchanged) ────────────────────────────────────────
     private static final String UID          = "uid";
     private static final String INUM_ATTR    = "inum";
     private static final String LANG         = "lang";
@@ -39,6 +39,8 @@ public class JansForgetUsername extends UsernameResendclass {
     private static final String DISPLAY_NAME = "displayName";
     private static final String GIVEN_NAME   = "givenName";
     private static final String LAST_NAME    = "sn";
+
+    // ── New constants ──────────────────────────────────────────────────────────
     private static final String MOBILE       = "mobile";
     private static final String ACTIVE_VALUE = "active";
     private static final int    OTP_LENGTH   = 6;
@@ -63,20 +65,17 @@ public class JansForgetUsername extends UsernameResendclass {
     @Override
     public Map<String, String> getUserEntityByMail(String email) {
 
-        // Step 1: Validate the email input first (unchanged)
         if (email == null || email.trim().isEmpty()) {
             logger.error("Email input is null or empty");
             return null;
         }
 
-        // Step 2: Fetch user from LDAP (unchanged)
         User user = getUser(MAIL, email);
         if (user == null) {
             logger.warn("No local account found for email: {}", email);
             return null;
         }
 
-        // Step 3: Extract attributes safely (unchanged)
         String userEmail   = getSingleValuedAttr(user, MAIL);
         String inum        = getSingleValuedAttr(user, INUM_ATTR);
         String name        = getSingleValuedAttr(user, GIVEN_NAME);
@@ -87,8 +86,8 @@ public class JansForgetUsername extends UsernameResendclass {
         String displayName = getSingleValuedAttr(user, DISPLAY_NAME);
         String sn          = getSingleValuedAttr(user, LAST_NAME);
         String lang        = getSingleValuedAttr(user, LANG);
+        String mobile      = getSingleValuedAttr(user, MOBILE);
 
-        // Step 4: Safely build a fallback name from email (unchanged)
         if (name == null) {
             name = displayName;
             if (name == null && userEmail != null) {
@@ -102,14 +101,25 @@ public class JansForgetUsername extends UsernameResendclass {
             }
         }
 
-        // ── NEW: read active status and phone ─────────────────────────────────
-        String jansStatus = getSingleValuedAttr(user, "jansStatus");
-        boolean isActive  = ACTIVE_VALUE.equalsIgnoreCase(jansStatus);
-        String mobile     = getSingleValuedAttr(user, MOBILE);
-        logger.info("User {} jansStatus={} isActive={} phone={}", uid, jansStatus, isActive, mobile);
-        // ─────────────────────────────────────────────────────────────────────
+        // ── FIX: same pattern as isPhoneUnique() in JansUserRegistration ─────────
+        UserService userService = CdiUtil.bean(UserService.class);
+        User fullUser = userService.getUser(uid, "uid", "jansStatus");
 
-        // Step 5: Prepare user data map (unchanged keys + 2 new ones)
+        logger.info("Direct getStatus() = {}", fullUser.getStatus());
+        logger.info("getAttribute jansStatus = {}", fullUser.getAttribute("jansStatus", true, false));
+        logger.info("getCustomAttribute jansStatus = {}",
+            userService.getCustomAttribute(fullUser, "jansStatus") != null
+                ? userService.getCustomAttribute(fullUser, "jansStatus").getValue()
+                : "NULL");
+
+        String jansStatus = getSingleValuedAttr(fullUser, "jansStatus");
+        logger.info("User {} jansStatus={}", uid, jansStatus);
+
+        // null status = active (Janssen default — same logic as isPhoneUnique)
+        boolean isActive = jansStatus == null || ACTIVE_VALUE.equalsIgnoreCase(jansStatus);
+        logger.info("User {} isActive={} phone={}", uid, isActive, mobile);
+        // ─────────────────────────────────────────────────────────────────────────
+
         Map<String, String> userMap = new HashMap<>();
         userMap.put(UID,          uid);
         userMap.put(INUM_ATTR,    inum);
@@ -118,8 +128,8 @@ public class JansForgetUsername extends UsernameResendclass {
         userMap.put(DISPLAY_NAME, displayName);
         userMap.put(LAST_NAME,    sn);
         userMap.put(LANG,         lang);
-        userMap.put("active",     String.valueOf(isActive)); // NEW — "true"/"false"
-        userMap.put("phone",      mobile);                   // NEW — null if not set
+        userMap.put("active",     String.valueOf(isActive));
+        userMap.put("phone",      mobile);
 
         logger.info("Returning user data for email: {}", email);
         return userMap;
