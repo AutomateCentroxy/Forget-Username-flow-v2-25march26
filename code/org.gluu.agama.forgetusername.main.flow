@@ -46,6 +46,13 @@ When userData is not null
                                    it_resend = {success: false, error: "ExceededResendAttempts"}
                                    // it_resend
                                    Finish it_resend
+                              Call __________#__________ 
+                              Log "@ " __________
+                              Call __________#__________ 
+                         Otherwise
+                              Log "@ " __________
+                              Call __________#__________ 
+                              Log "@ " __________
                Otherwise
                     // "Failed to send OTP to your phone. Please try again."
                     uiFeedback.errorMessage = "Failed to send OTP to your phone. Please try again."
