@@ -2262,7 +2262,7 @@
 				"width": 168,
 				"height": 120
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "whenNode-ae0da654-0be7-43de-ab57-f0a28413875c",
@@ -2283,20 +2283,28 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "otpValidationResult",
+							"operator": "is",
+							"dataValue": "true",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "If otp validation was successful"
 				}
 			},
 			"measured": {
 				"width": 109,
 				"height": 58
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-fb9a347d-282d-4390-8043-55e6cf6a933a",
