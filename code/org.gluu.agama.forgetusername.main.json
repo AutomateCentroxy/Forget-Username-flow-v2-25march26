@@ -1785,7 +1785,14 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "resendResult",
+							"operator": "is",
+							"dataValue": "null",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
@@ -1798,7 +1805,8 @@
 			"measured": {
 				"width": 109,
 				"height": 58
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "logNode-19b2be33-6bd7-4641-ad23-b978420a9194",
@@ -1817,21 +1825,22 @@
 				"previousNodeId": "whenNode-b4390e6c-21ea-4ea0-ae69-b300b085dde2",
 				"branching": "continue",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"New OTP code send successfully!\" resendResult",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "New OTP code send successfully!"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "assignmentNode-741bd9dd-a986-418e-9b79-4b1148549835",
@@ -2999,8 +3008,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3686.158721266226,
-		"y": -647.4204425299212,
-		"zoom": 0.6381643844144765
+		"x": -5521.530105911787,
+		"y": -1165.0400032133227,
+		"zoom": 0.860949188338904
 	}
 }
