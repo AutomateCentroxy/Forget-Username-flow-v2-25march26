@@ -16,7 +16,15 @@
     "noDirectLaunch": [],
     "configs": {
         "senduser": {},
-        "org.gluu.agama.forgetusername.main": {},
+        "org.gluu.agama.forgetusername.main": {
+            "ACCOUNT_SID": "PUT_YOUR_TWILIO_ACCOUNT_SID_HERE",
+            "AUTH_TOKEN": "PUT_YOUR_TWILIO_AUTH_TOKEN_HERE",
+            "FROM_NUMBER": "PHIWALLET",
+            "FROM_NUMBER_US": "PUT_US_SENDER_NUMBER_HERE",
+            "FROM_NUMBER_RESTRICTED_COUNTRIES": "PUT_RESTRICTED_SENDER_NUMBER_HERE",
+            "US_COUNTRY_CODES": "PUT_US_COUNTRY_CODES_HERE",
+            "RESTRICTED_COUNTRY_CODES": "PUT_RESTRICTED_CODES_HERE"
+        },
         "usernameclass": {}
     },
     "name": "agama-forget-username"
