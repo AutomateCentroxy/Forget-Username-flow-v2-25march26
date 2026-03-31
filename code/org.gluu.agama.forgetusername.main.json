@@ -2114,13 +2114,13 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-27bde485-ed1a-4c8b-a13d-c79570566650",
 			"type": "assignmentNode",
 			"position": {
-				"x": 6782.551560209041,
+				"x": 6781.202457674702,
 				"y": 1358.3627365656605
 			},
 			"data": {
@@ -2132,20 +2132,28 @@
 				},
 				"previousNodeId": "logNode-5d9eebac-d20d-43f5-a84d-a59176cb3459",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "{ success: false, error: \"ExceededTheNumberOfAttemptsAllowed\" }",
+							"assignedVariableName": "it_otpmax"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Set validation error",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Set validation error"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "finishNode-ca74a2bf-0ced-4742-8f4a-69f85192c278",
@@ -2166,18 +2174,20 @@
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "End validation exceeded",
 					"hasComment": true,
-					"comment": "",
+					"comment": "End validation exceeded",
 					"flowfilename": "",
-					"returnVariable": "",
+					"returnVariable": "it_otpmax",
+					"finishMode": "withVariable",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "callNode-1c85eadd-8b44-4150-ba4d-a0c8f4184787",
