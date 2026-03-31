@@ -43,7 +43,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-cbbea966-78d5-4b08-9741-496005f133b3",
@@ -104,7 +104,9 @@
 					"javaVariableName": "",
 					"exceptionVariableField": "",
 					"callType": "Call static method",
-					"arguments": [],
+					"arguments": [
+						"conf"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
@@ -119,7 +121,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "rrfNode-88e8084b-13f4-4dfd-bfc0-703c9cdbf3b6",
@@ -3845,8 +3847,8 @@
 		}
 	],
 	"viewport": {
-		"x": 121.4731204831105,
-		"y": 143.09310990171787,
-		"zoom": 0.5
+		"x": -27.54485452917629,
+		"y": 96.34587520286007,
+		"zoom": 0.6745512671698494
 	}
 }
