@@ -1649,7 +1649,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "callNode-b1666914-434d-4215-824f-3b4932ca256c",
@@ -1668,25 +1668,29 @@
 				"previousNodeId": "whenNode-6a2e32cb-09ed-40bf-a468-d1870ce56673",
 				"branching": "continue",
 				"agamaData": {
-					"javaClassName": "",
-					"javaMethodName": "",
+					"javaClassName": "org.gluu.agama.forgetusername.CounterHelper",
+					"javaMethodName": "increment",
 					"javaVariableName": "",
 					"exceptionVariableField": "",
 					"callType": "Call static method",
-					"arguments": [],
+					"arguments": [
+						"resendCount"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Increment resend counter",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Increment resend counter",
+					"asssignedVariableName": "resendCount"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-04526e6e-bc63-4267-ba8e-cae5b39ac163",
@@ -2632,8 +2636,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3712.288705691555,
-		"y": -693.038757325357,
+		"x": -3757.288705691555,
+		"y": -709.038757325357,
 		"zoom": 0.7412335049014176
 	}
 }
