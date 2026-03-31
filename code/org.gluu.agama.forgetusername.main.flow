@@ -1,5 +1,7 @@
 Flow org.gluu.agama.forgetusername.main
      Basepath ""
+     Timeout 900 seconds
+     Configs conf
 // Create  variable for UCreate  variable for UI feedbackI feedback
 uiFeedback = {}
 // forgetusernameService
