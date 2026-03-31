@@ -91,6 +91,9 @@ When userData is not null
                                         sendMailed = Call forgetusernameService sendUsernameEmail email username lang
                                         // "Email send to the user +++++++++++++++++" sendMailed
                                         Log "@info Email send to the user +++++++++++++++++" sendMailed
+                                        // acknowledgementEmail.ftlh
+                                        RRF "acknowledgementEmail.ftlh" uiFeedback
+                                        Finish username
                                    Otherwise
                                         // The maximum number of attempt has been reached.
                                         Log "@info Invalid code provided "
