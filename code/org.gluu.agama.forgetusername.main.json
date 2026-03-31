@@ -1394,7 +1394,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "whenNode-6a2e32cb-09ed-40bf-a468-d1870ce56673",
@@ -1488,20 +1488,27 @@
 				},
 				"previousNodeId": "logNode-4994fdf0-5ae8-49dd-b9b0-bc5e3cb547f9",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "{success: false, error: \"ExceededResendAttempts\"}",
+							"assignedVariableName": "it_resend"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "{success: false, error: \"ExceededResendAttempts\"}"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "finishNode-e0227fda-8a6e-4ae2-b3cb-a929706ab50b",
@@ -1524,16 +1531,18 @@
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": "",
+					"comment": "it_resend",
 					"flowfilename": "",
-					"returnVariable": "",
+					"returnVariable": "it_resend",
+					"finishMode": "withVariable",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		}
 	],
 	"edges": [
@@ -2297,8 +2306,8 @@
 		}
 	],
 	"viewport": {
-		"x": -5323.650416154463,
-		"y": -1297.7326120983494,
+		"x": -5815.650416154463,
+		"y": -1461.7326120983494,
 		"zoom": 1
 	}
 }
