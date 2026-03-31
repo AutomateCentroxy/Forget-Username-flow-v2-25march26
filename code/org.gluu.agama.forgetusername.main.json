@@ -2415,6 +2415,48 @@
 				"width": 168,
 				"height": 120
 			},
+			"selected": false
+		},
+		{
+			"id": "callNode-41476da6-609c-4f58-ab31-87b4cfc1b00c",
+			"type": "callNode",
+			"position": {
+				"x": 7532.551560209041,
+				"y": 1166.3627365656605
+			},
+			"data": {
+				"id": "callNode-41476da6-609c-4f58-ab31-87b4cfc1b00c",
+				"type": "callNode",
+				"position": {
+					"x": 7532.551560209041,
+					"y": 1166.3627365656605
+				},
+				"previousNodeId": "logNode-e84805d1-ec11-4417-b948-23329eed5cae",
+				"agamaData": {
+					"javaClassName": "",
+					"javaMethodName": "sendUsernameEmail",
+					"javaVariableName": "forgetusernameService",
+					"exceptionVariableField": "",
+					"callType": "Call method on instance",
+					"arguments": [
+						"email",
+						"username",
+						"lang"
+					],
+					"nodeIcon": "material-symbols:code",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "sendMailed",
+					"hasComment": true,
+					"comment": "",
+					"asssignedVariableName": "sendMailed"
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			},
 			"selected": true
 		}
 	],
@@ -3613,11 +3655,30 @@
 			},
 			"labelShowBg": true,
 			"sourceHandle": "source_whenNode-ae0da654-0be7-43de-ab57-f0a28413875c_success"
+		},
+		{
+			"id": "logNode-e84805d1-ec11-4417-b948-23329eed5cae-callNode-41476da6-609c-4f58-ab31-87b4cfc1b00c",
+			"type": "default",
+			"source": "logNode-e84805d1-ec11-4417-b948-23329eed5cae",
+			"target": "callNode-41476da6-609c-4f58-ab31-87b4cfc1b00c",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_logNode-e84805d1-ec11-4417-b948-23329eed5cae"
 		}
 	],
 	"viewport": {
-		"x": -4395.372183975328,
-		"y": -428.84110677843967,
-		"zoom": 0.7412335049014176
+		"x": -7287.43208737323,
+		"y": -740.9056964813315,
+		"zoom": 1.0570180405613803
 	}
 }
