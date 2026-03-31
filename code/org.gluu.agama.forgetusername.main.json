@@ -19,11 +19,19 @@
 				"agamaData": {
 					"isTopLevelFlow": true,
 					"basepath": "",
-					"configParams": "{}",
+					"configParams": {
+						"ACCOUNT_SID": "PUT_YOUR_TWILIO_ACCOUNT_SID_HERE",
+						"AUTH_TOKEN": "PUT_YOUR_TWILIO_AUTH_TOKEN_HERE",
+						"FROM_NUMBER": "PHIWALLET",
+						"FROM_NUMBER_US": "PUT_US_SENDER_NUMBER_HERE",
+						"FROM_NUMBER_RESTRICTED_COUNTRIES": "PUT_RESTRICTED_SENDER_NUMBER_HERE",
+						"US_COUNTRY_CODES": "PUT_US_COUNTRY_CODES_HERE",
+						"RESTRICTED_COUNTRY_CODES": "PUT_RESTRICTED_CODES_HERE"
+					},
 					"nodeIcon": "material-symbols:line-start-square",
-					"timeout": "",
+					"timeout": "900",
 					"inputs": "",
-					"configs": "",
+					"configs": "conf",
 					"flowname": "org.gluu.agama.forgetusername.main",
 					"displayName": "org.gluu.agama.forgetusername.main",
 					"creationDate": "29/10/2025",
@@ -35,7 +43,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "assignmentNode-cbbea966-78d5-4b08-9741-496005f133b3",
@@ -2560,7 +2568,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		}
 	],
 	"edges": [
@@ -3837,8 +3845,8 @@
 		}
 	],
 	"viewport": {
-		"x": -8894.593855661302,
-		"y": -1034.8548686307104,
-		"zoom": 1.161508731925722
+		"x": 121.4731204831105,
+		"y": 143.09310990171787,
+		"zoom": 0.5
 	}
 }
