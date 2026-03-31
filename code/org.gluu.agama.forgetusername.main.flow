@@ -74,7 +74,8 @@ When userData is not null
                               Log "@info Validation attempt number: " validationAttempts
                               // Check validation
                               When validationAttempts is 4
-                                   Log "@ " __________
+                                   // Log validation exceeded
+                                   Log "@info Maximum validation attempts exceeded"
                                    Finish __________
                               Otherwise
                                    Call __________#__________ 
