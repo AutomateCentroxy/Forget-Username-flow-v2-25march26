@@ -76,7 +76,10 @@ When userData is not null
                               When validationAttempts is 4
                                    // Log validation exceeded
                                    Log "@info Maximum validation attempts exceeded"
-                                   Finish __________
+                                   // Set validation error
+                                   it_otpmax = { success: false, error: "ExceededTheNumberOfAttemptsAllowed" }
+                                   // End validation exceeded
+                                   Finish it_otpmax
                               Otherwise
                                    Call __________#__________ 
                                    Log "@ " __________
