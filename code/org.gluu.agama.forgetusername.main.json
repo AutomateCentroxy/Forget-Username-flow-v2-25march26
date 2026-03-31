@@ -1360,7 +1360,7 @@
 				"width": 109,
 				"height": 58
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-23f7ae69-10fd-41f5-baaa-f993d1f421a2",
@@ -1379,21 +1379,22 @@
 				"previousNodeId": "whenNode-1d8816a1-c78f-4d2a-ab34-789d8d838774",
 				"branching": "success",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Maximum resend otp attempts exceeded\"",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Maximum resend otp attempts exceeded"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "whenNode-6a2e32cb-09ed-40bf-a468-d1870ce56673",
