@@ -1561,21 +1561,22 @@
 				"previousNodeId": "whenNode-1d8816a1-c78f-4d2a-ab34-789d8d838774",
 				"branching": "otherwise",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Information provided by the user is : \" otpCreds.code",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "LOG",
 					"hasComment": true,
-					"comment": ""
+					"comment": " Add log entry with collected code in log file."
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "callNode-69c9a6a7-53b8-48a0-b6dc-741993e0196f",
@@ -1593,25 +1594,29 @@
 				},
 				"previousNodeId": "logNode-4d8455df-828f-45e6-b89c-2c04878ff81e",
 				"agamaData": {
-					"javaClassName": "",
-					"javaMethodName": "",
+					"javaClassName": "org.gluu.agama.forgetusername.CounterHelper",
+					"javaMethodName": "increment",
 					"javaVariableName": "",
 					"exceptionVariableField": "",
 					"callType": "Call static method",
-					"arguments": [],
+					"arguments": [
+						"validationAttempts"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "validationAttempts",
 					"hasComment": true,
-					"comment": ""
+					"comment": "validationAttempts",
+					"asssignedVariableName": "validationAttempts"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-03e659dc-90ed-43d0-a836-097a157b8e30",
@@ -2626,8 +2631,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3966.288705691555,
-		"y": -716.038757325357,
+		"x": -3627.288705691555,
+		"y": -667.038757325357,
 		"zoom": 0.7412335049014176
 	}
 }
