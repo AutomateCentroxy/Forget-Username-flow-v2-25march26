@@ -42,7 +42,10 @@ When userData is not null
                               When resendCount is 3
                                    // Maximum resend attempts exceeded
                                    Log "@info " Maximum resend attempts exceeded
-                                   Finish __________
+                                   // {success: false, error: "ExceededResendAttempts"}
+                                   it_resend = {success: false, error: "ExceededResendAttempts"}
+                                   // it_resend
+                                   Finish it_resend
                Otherwise
                     // "Failed to send OTP to your phone. Please try again."
                     uiFeedback.errorMessage = "Failed to send OTP to your phone. Please try again."
