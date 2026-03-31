@@ -15,11 +15,7 @@ public abstract class UsernameResendclass {
 
     public abstract boolean validateOTPCode(String phone, String code);
 
-    // No-arg (used by Agama engine internally via reflection)
-    public static UsernameResendclass getInstance() {
-        return new JansForgetUsername();
-    }
-
+    
     public static UsernameResendclass getInstance(HashMap config) {
         return new JansForgetUsername(config);
     }
