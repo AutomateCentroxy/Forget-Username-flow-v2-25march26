@@ -101,21 +101,45 @@ public class JansForgetUsername extends UsernameResendclass {
             }
         }
 
+        // ── MARKER: if you see this log, the new code is running ─────────────────
+        logger.info("=== NEW CODE RUNNING: fetching jansStatus explicitly for uid: {} ===", uid);
+
         // ── FIX: same pattern as isPhoneUnique() in JansUserRegistration ─────────
         UserService userService = CdiUtil.bean(UserService.class);
         User fullUser = userService.getUser(uid, "uid", "jansStatus");
 
+        if (fullUser == null) {
+            logger.error("fullUser is NULL after getUser() for uid: {}", uid);
+            // Safe fallback — treat as active if we can't determine status
+            boolean isActiveFallback = true;
+            logger.warn("Falling back to isActive=true for uid: {}", uid);
+
+            Map<String, String> fallbackMap = new HashMap<>();
+            fallbackMap.put(UID,          uid);
+            fallbackMap.put(INUM_ATTR,    inum);
+            fallbackMap.put("name",       name);
+            fallbackMap.put("email",      userEmail);
+            fallbackMap.put(DISPLAY_NAME, displayName);
+            fallbackMap.put(LAST_NAME,    sn);
+            fallbackMap.put(LANG,         lang);
+            fallbackMap.put("active",     String.valueOf(isActiveFallback));
+            fallbackMap.put("phone",      mobile);
+            return fallbackMap;
+        }
+
+        // ── Same 3 debug lines as isPhoneUnique() ────────────────────────────────
         logger.info("Direct getStatus() = {}", fullUser.getStatus());
-        logger.info("getAttribute jansStatus = {}", fullUser.getAttribute("jansStatus", true, false));
+        logger.info("getAttribute jansStatus = {}",
+                fullUser.getAttribute("jansStatus", true, false));
         logger.info("getCustomAttribute jansStatus = {}",
-            userService.getCustomAttribute(fullUser, "jansStatus") != null
-                ? userService.getCustomAttribute(fullUser, "jansStatus").getValue()
-                : "NULL");
+                userService.getCustomAttribute(fullUser, "jansStatus") != null
+                        ? userService.getCustomAttribute(fullUser, "jansStatus").getValue()
+                        : "NULL");
 
         String jansStatus = getSingleValuedAttr(fullUser, "jansStatus");
-        logger.info("User {} jansStatus={}", uid, jansStatus);
+        logger.info("User {} jansStatus resolved = {}", uid, jansStatus);
 
-        // null status = active (Janssen default — same logic as isPhoneUnique)
+        // null = active (Janssen default — same logic as isPhoneUnique)
         boolean isActive = jansStatus == null || ACTIVE_VALUE.equalsIgnoreCase(jansStatus);
         logger.info("User {} isActive={} phone={}", uid, isActive, mobile);
         // ─────────────────────────────────────────────────────────────────────────
