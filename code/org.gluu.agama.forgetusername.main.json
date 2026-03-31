@@ -1690,7 +1690,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-04526e6e-bc63-4267-ba8e-cae5b39ac163",
@@ -1708,21 +1708,22 @@
 				},
 				"previousNodeId": "callNode-b1666914-434d-4215-824f-3b4932ca256c",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Resend attempt number: \" resendCount",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "\"Resend attempt number: \" resendCount"
 				}
 			},
 			"measured": {
-				"width": 170,
-				"height": 122
-			}
+				"width": 168,
+				"height": 120
+			},
+			"selected": false
 		},
 		{
 			"id": "callNode-fa2d5c10-4a24-4066-aef8-27722d7331d4",
@@ -1741,24 +1742,29 @@
 				"previousNodeId": "logNode-04526e6e-bc63-4267-ba8e-cae5b39ac163",
 				"agamaData": {
 					"javaClassName": "",
-					"javaMethodName": "",
-					"javaVariableName": "",
+					"javaMethodName": "sendOtpToPhone",
+					"javaVariableName": "forgetusernameService",
 					"exceptionVariableField": "",
-					"callType": "Call static method",
-					"arguments": [],
+					"callType": "Call method on instance",
+					"arguments": [
+						"phone",
+						"lang"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "resendResult",
 					"hasComment": true,
-					"comment": ""
+					"comment": "resendResult",
+					"asssignedVariableName": "resendResult"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		}
 	],
 	"edges": [
@@ -2636,8 +2642,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3757.288705691555,
-		"y": -709.038757325357,
+		"x": -4070.288705691555,
+		"y": -787.038757325357,
 		"zoom": 0.7412335049014176
 	}
 }
