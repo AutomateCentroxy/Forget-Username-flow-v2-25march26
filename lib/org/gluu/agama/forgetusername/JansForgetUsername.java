@@ -59,9 +59,8 @@ public class JansForgetUsername extends UsernameResendclass {
 
     // ── Constructor (replaces no-arg, receives config from Agama flow) ─────────
     public JansForgetUsername(Map<String, String> config) {
-        this.flowConfig = config != null ? config : new HashMap<>();
-        logger.info("JansForgetUsername initialized. Twilio SID: {}",
-                this.flowConfig.get("ACCOUNT_SID"));
+        this.flowConfig = config;
+        logger.info("Using Twilio account SID: {}", config.get("ACCOUNT_SID"));
     }
 
     // =========================================================================
