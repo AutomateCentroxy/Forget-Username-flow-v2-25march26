@@ -50,8 +50,10 @@ When userData is not null
                               Log "@ " __________
                               Call __________#__________ 
                          Otherwise
-                              Log "@ " __________
-                              Call __________#__________ 
+                              //  Add log entry with collected code in log file.
+                              Log "@info Information provided by the user is : " otpCreds.code
+                              // validationAttempts
+                              validationAttempts = Call org.gluu.agama.forgetusername.CounterHelper#increment validationAttempts
                               Log "@ " __________
                Otherwise
                     // "Failed to send OTP to your phone. Please try again."
