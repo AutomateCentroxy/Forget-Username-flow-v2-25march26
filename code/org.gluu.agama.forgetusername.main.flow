@@ -54,7 +54,8 @@ When userData is not null
                               Log "@info Information provided by the user is : " otpCreds.code
                               // validationAttempts
                               validationAttempts = Call org.gluu.agama.forgetusername.CounterHelper#increment validationAttempts
-                              Log "@ " __________
+                              // Add log entry withvalidation result in log file.
+                              Log "@info Validation attempt number: " validationAttempts
                Otherwise
                     // "Failed to send OTP to your phone. Please try again."
                     uiFeedback.errorMessage = "Failed to send OTP to your phone. Please try again."
