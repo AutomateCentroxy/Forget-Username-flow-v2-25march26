@@ -89,6 +89,8 @@ When userData is not null
                                    When otpValidationResult is true
                                         Log "@info OTP validated Successfully"
                                         sendMailed = Call forgetusernameService sendUsernameEmail email username lang
+                                        // "Email send to the user +++++++++++++++++" sendMailed
+                                        Log "@info Email send to the user +++++++++++++++++" sendMailed
                                    Otherwise
                                         // The maximum number of attempt has been reached.
                                         Log "@info Invalid code provided "
