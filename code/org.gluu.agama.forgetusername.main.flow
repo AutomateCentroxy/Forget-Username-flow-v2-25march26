@@ -53,7 +53,11 @@ When userData is not null
                               // resendResult
                               resendResult = Call forgetusernameService sendOtpToPhone phone lang
                               When resendResult is null
-                                   Log "@ " __________
+                                   // "Fail to resend new code to user. " resendResult
+                                   Log "@info Fail to resend new code to user. " resendResult
+                                   // "Error occurs while sending new code to you. Please contact site administrator."
+                                   otpUiFeedback.errorMessage = "Error occurs while sending new code to you. Please contact site administrator."
+                                   otpUiFeedback.infoMessage = ""
                                    isResending = true
                               // New OTP code send successfully!
                               Log "@info New OTP code send successfully!" resendResult
