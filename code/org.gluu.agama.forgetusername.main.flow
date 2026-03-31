@@ -37,7 +37,8 @@ When userData is not null
                          //  Show UI to collect OTP code from user.
                          otpCreds = RRF "VerifyOtp.ftlh" otpUiFeedback
                          When otpCreds.hasRequestedNewCode is "yes"
-                              Log "@ " __________
+                              // Maximum resend otp attempts exceeded
+                              Log "@info Maximum resend otp attempts exceeded"
                               When 
                                    Log "@ " __________
                                    Finish __________
