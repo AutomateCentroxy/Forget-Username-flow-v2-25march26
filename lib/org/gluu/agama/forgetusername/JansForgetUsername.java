@@ -51,6 +51,12 @@ public class JansForgetUsername extends UsernameResendclass {
     // Twilio config injected via constructor
     private final Map<String, String> flowConfig;
 
+    // ── No-arg constructor (required by Agama engine) ─────────────────────────
+    public JansForgetUsername() {
+        this.flowConfig = new HashMap<>();
+        logger.info("JansForgetUsername initialized with no-arg constructor.");
+    }
+
     // ── Constructor (replaces no-arg, receives config from Agama flow) ─────────
     public JansForgetUsername(Map<String, String> config) {
         this.flowConfig = config != null ? config : new HashMap<>();
