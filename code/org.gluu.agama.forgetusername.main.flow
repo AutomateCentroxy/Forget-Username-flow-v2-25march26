@@ -89,7 +89,11 @@ When userData is not null
                                    When otpValidationResult is true
                                         Log "@ " __________
                                    Otherwise
-                                        Log "@ " __________
+                                        // The maximum number of attempt has been reached.
+                                        Log "@info Invalid code provided "
+                                        // Provide feedback
+                                        otpUiFeedback.errorMessage = "Invalid code provided."
+                                        otpUiFeedback.infoMessage = ""
                Otherwise
                     // "Failed to send OTP to your phone. Please try again."
                     uiFeedback.errorMessage = "Failed to send OTP to your phone. Please try again."
