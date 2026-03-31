@@ -85,7 +85,8 @@ When userData is not null
                                    otpValidationResult = Call forgetusernameService validateOTPCode phone otpCreds.code
                                    // Add log entry withvalidation result in log file.
                                    Log "@info OTP validation result is:" otpValidationResult
-                                   When 
+                                   // If otp validation was successful
+                                   When otpValidationResult is true
                                         Log "@ " __________
                                    Otherwise
                                         Log "@ " __________
