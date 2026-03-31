@@ -72,6 +72,8 @@ When userData is not null
                               validationAttempts = Call org.gluu.agama.forgetusername.CounterHelper#increment validationAttempts
                               // Add log entry withvalidation result in log file.
                               Log "@info Validation attempt number: " validationAttempts
+                              // Check validation
+                              When validationAttempts is 4
                Otherwise
                     // "Failed to send OTP to your phone. Please try again."
                     uiFeedback.errorMessage = "Failed to send OTP to your phone. Please try again."
