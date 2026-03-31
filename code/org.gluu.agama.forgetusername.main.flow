@@ -46,7 +46,8 @@ When userData is not null
                                    it_resend = {success: false, error: "ExceededResendAttempts"}
                                    // it_resend
                                    Finish it_resend
-                              Call __________#__________ 
+                              // Increment resend counter
+                              resendCount = Call org.gluu.agama.forgetusername.CounterHelper#increment resendCount
                               Log "@ " __________
                               Call __________#__________ 
                          Otherwise
