@@ -52,19 +52,9 @@ public class JansForgetUsername extends UsernameResendclass {
     private final Map<String, String> flowConfig;
 
     // ── No-arg constructor (required by Agama engine) ─────────────────────────
-    // public JansForgetUsername() {
-    //     this.flowConfig = new HashMap<>();
-    //     logger.info("JansForgetUsername initialized with no-arg constructor.");
-    // }
-
-    private static JansForgetUsername INSTANCE = null;
-
-    public static synchronized UsernameResendclass getInstance() {
-        if (INSTANCE == null) {
-            Map<String, String> config = loadTwilioConfig(); // same as registration
-            INSTANCE = new JansForgetUsername(config);
-        }
-        return INSTANCE;
+    public JansForgetUsername() {
+        this.flowConfig = new HashMap<>();
+        logger.info("JansForgetUsername initialized with no-arg constructor.");
     }
 
     // ── Constructor (replaces no-arg, receives config from Agama flow) ─────────
