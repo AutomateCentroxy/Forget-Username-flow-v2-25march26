@@ -81,7 +81,8 @@ When userData is not null
                                    // End validation exceeded
                                    Finish it_otpmax
                               Otherwise
-                                   Call __________#__________ 
+                                   //  Validate the OTP code provided by the user.
+                                   otpValidationResult = Call forgetusernameService validateOTPCode phone otpCreds.code
                                    Log "@ " __________
                                    When 
                                         Log "@ " __________
